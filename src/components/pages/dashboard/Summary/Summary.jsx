@@ -1,85 +1,82 @@
 import { SummaryWrap } from "./Summary.styles";
 import { BlockContentWrap } from "../../../../styles/global/default";
-import {
-  MdAttachMoney,
-  MdBarChart,
-  MdFileCopy,
-  MdOutlineKeyboardArrowDown,
+import { 
+  MdLibraryBooks, 
+  MdMeetingRoom, 
+  MdTune, 
+  MdCheckCircle,
+  MdPlayArrow
 } from "react-icons/md";
-import { Images } from "../../../../assets/images";
-import { Icons } from "../../../../assets/icons";
+import { useNavigate } from "react-router-dom";
 
 const Summary = () => {
+  const navigate = useNavigate();
+
   return (
     <SummaryWrap>
       <div className="dash-board-content">
+        {/* Top Metric Blocks */}
         <div className="dboard-blocks dboard-summary-blocks">
           <BlockContentWrap className="dboard-block">
             <div className="summary-block-icon">
-              <MdBarChart />
+              <MdLibraryBooks />
             </div>
             <div className="summary-block-details">
-              <p className="summary-block-ttl">Earnings</p>
-              <div className="summary-block-val">$350.4</div>
+              <p className="summary-block-ttl">Total Courses</p>
+              <div className="summary-block-val">145</div>
             </div>
           </BlockContentWrap>
 
-          <BlockContentWrap className="dboard-block dboard-block-earnings">
+          <BlockContentWrap className="dboard-block">
             <div className="summary-block-icon">
-              <MdAttachMoney />
+              <MdMeetingRoom />
             </div>
             <div className="summary-block-details">
-              <p className="summary-block-ttl">Spend this Month</p>
-              <div className="summary-block-val">$682.5</div>
-            </div>
-          </BlockContentWrap>
-
-          <BlockContentWrap className="dboard-block dboard-block-sales">
-            <div className="summary-block-details">
-              <p className="summary-block-ttl">Sales</p>
-              <div className="summary-block-val">$682.5</div>
+              <p className="summary-block-ttl">Total Rooms</p>
+              <div className="summary-block-val">24</div>
               <p className="summary-block-text">
-                <span className="text-percent">$23%</span> since last month
+                <span className="text-percent">4,200</span> Capacity
               </p>
             </div>
           </BlockContentWrap>
 
-          <BlockContentWrap className="dboard-block dboard-block-balance">
-            <div className="summary-block-details">
-              <p className="summary-block-ttl">Your balance</p>
-              <div className="summary-block-val">$1,000</div>
+          <BlockContentWrap className="dboard-block">
+            <div className="summary-block-icon">
+              <MdTune />
             </div>
-            <div className="summary-block-dropdown">
-              <button className="dropdown-btn">
-                <span className="dropdown-btn-img">
-                  <img src={Images.UsaFlag} alt="" />
-                </span>
-                <span className="dropdown-btn-icon">
-                  <MdOutlineKeyboardArrowDown />
-                </span>
-              </button>
+            <div className="summary-block-details">
+              <p className="summary-block-ttl">Active Constraints</p>
+              <div className="summary-block-val">12</div>
+              <p className="summary-block-text">
+                <span className="text-percent">3</span> Hard, 9 Soft
+              </p>
             </div>
           </BlockContentWrap>
 
-          <BlockContentWrap className="dboard-block dboard-block-ntasks">
+          <BlockContentWrap className="dboard-block">
             <div className="summary-block-icon">
-              <img src={Icons.CheckPlus} alt="" />
+              <MdCheckCircle />
             </div>
             <div className="summary-block-details">
-              <p className="summary-block-ttl">New Tasks</p>
-              <div className="summary-block-val">154</div>
+              <p className="summary-block-ttl">Last Generated</p>
+              <div className="summary-block-val" style={{ fontSize: "18px" }}>Oct 12, 2026</div>
+              <p className="summary-block-text">
+                Fitness: <span className="text-percent">98.5%</span>
+              </p>
             </div>
           </BlockContentWrap>
+        </div>
 
-          <BlockContentWrap className="dboard-block dboard-block-projects">
-            <div className="summary-block-icon">
-              <MdFileCopy />
-            </div>
-            <div className="summary-block-details">
-              <p className="summary-block-ttl">Total Projects</p>
-              <div className="summary-block-val">2935</div>
-            </div>
-          </BlockContentWrap>
+        {/* Generate Timetable Action Banner */}
+        <div className="generate-banner">
+          <div className="banner-text">
+            <h2>Ready to optimize the exam schedule?</h2>
+            <p>Run the Genetic Algorithm engine to generate a clash-free timetable based on your latest courses, rooms, and constraints.</p>
+          </div>
+          <button className="generate-btn" onClick={() => navigate('/generate-timetable')}>
+            <MdPlayArrow size={24} />
+            Generate New Timetable
+          </button>
         </div>
       </div>
     </SummaryWrap>

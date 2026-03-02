@@ -161,23 +161,25 @@ export const COMPLEX_TABLE_DATA = [
   },
 ];
 
+// ... keep your other mock data exactly the same ...
+
 export const TEAM_MEMBERS_DATA = [
   {
     id: 1,
-    name: "Adela Parkson",
-    position: "Creative Director",
-    image: Images.Team1,
+    name: "Dr. A.A. Waheed",
+    position: "Project Supervisor",
+    image: Images.Team1, // Reusing existing mock images
   },
   {
     id: 2,
-    name: "Christian Mad",
-    position: "Product Designer",
+    name: "Dr. V.B. Oyekunle",
+    position: "Head of Department",
     image: Images.Team2,
   },
   {
     id: 3,
-    name: "Jason Statham",
-    position: "Junior Graphic Designer",
+    name: "System Admin",
+    position: "Examination Officer",
     image: Images.Team3,
   },
 ];

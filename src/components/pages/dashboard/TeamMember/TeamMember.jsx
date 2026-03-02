@@ -8,7 +8,7 @@ const TeamMember = () => {
   return (
     <TeamMemberWrap>
       <BlockTitle className="teams-head">
-        <h3 className="head-ttl">Team members</h3>
+        <h3 className="head-ttl">Examination Board</h3>
         <BlockIconBtn className="head-icon-btn">
           <AiFillPlusCircle />
         </BlockIconBtn>

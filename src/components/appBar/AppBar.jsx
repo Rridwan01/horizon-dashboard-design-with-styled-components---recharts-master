@@ -37,7 +37,7 @@ const AppBar = () => {
           >
             <MdMenu size={24} />
           </button>
-          <p className="appbar-head-breadcrumb">Pages / {pageTitle}</p>
+          {/* <p className="appbar-head-breadcrumb">Pages / {pageTitle}</p> */}
         </div>
         
         <div className="appbar-head-main">

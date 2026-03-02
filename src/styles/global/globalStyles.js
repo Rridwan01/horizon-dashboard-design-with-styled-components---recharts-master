@@ -32,7 +32,6 @@ export const GlobalStyles = createGlobalStyle`
         transition: ${theme.transitions.easeInOut};
     }
 
-    /* Button styles */
     button{
         border: none;
         cursor: pointer;
@@ -44,6 +43,34 @@ export const GlobalStyles = createGlobalStyle`
             opacity: 0.9;
         }
     }
+
+    /* --- CUSTOM GLOBAL SELECT DROPDOWN --- */
+    select {
+        appearance: none; /* Removes native OS styling */
+        -webkit-appearance: none; /* Safari/Chrome */
+        -moz-appearance: none; /* Firefox */
+        
+        /* Custom sleek SVG arrow */
+        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23A3AED0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>');
+        background-repeat: no-repeat;
+        background-position: right 14px center; /* Position the arrow */
+        background-size: 16px;
+        padding-right: 40px !important; /* Make room for the arrow so text doesn't overlap */
+        cursor: pointer;
+    }
+
+    /* Removes default arrow in Internet Explorer */
+    select::-ms-expand {
+        display: none;
+    }
+
+    /* Forces dark theme on the dropdown options */
+    select option {
+        background-color: ${theme.colors.spaceCadet1};
+        color: ${theme.colors.white};
+        padding: 10px;
+    }
+    /* ------------------------------------- */
 
     .scrollbar{
         &::-webkit-scrollbar{

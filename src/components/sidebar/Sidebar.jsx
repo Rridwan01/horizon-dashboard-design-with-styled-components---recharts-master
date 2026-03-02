@@ -1,13 +1,13 @@
 import { SidebarWrap } from "./Sidebar.styles";
 import { FaSkyatlas } from "react-icons/fa6";
 import {
-  MdBarChart,
   MdClose,
   MdDashboard,
-  MdHome,
-  MdLock,
-  MdPerson,
-  MdShoppingCart,
+  MdLibraryBooks,
+  MdMeetingRoom,
+  MdTune,
+  MdAutorenew,
+  MdCalendarMonth,
 } from "react-icons/md";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
@@ -37,54 +37,67 @@ const Sidebar = () => {
         </div>
         <nav className="sidebar-nav scrollbar">
           <ul className="sidenav-list">
+            
+            {/* Dashboard: Standard dashboard layout icon */}
             <li className="sidenav-item">
               <Link to="/" className="sidenav-link">
                 <span className="link-icon">
-                  <MdHome size={24} />
+                  <MdDashboard size={24} />
                 </span>
                 <span className="link-text">Dashboard</span>
               </Link>
             </li>
+
+            {/* Course Management: Stack of books */}
             <li className="sidenav-item">
               <Link to="/course-management" className="sidenav-link">
                 <span className="link-icon">
-                  <MdShoppingCart size={20} />
+                  <MdLibraryBooks size={24} />
                 </span>
                 <span className="link-text">Course Management</span>
               </Link>
             </li>
+
+            {/* Room Management: A physical room/doorway */}
             <li className="sidenav-item">
               <Link to="/room-management" className="sidenav-link">
                 <span className="link-icon">
-                  <MdBarChart size={24} />
+                  <MdMeetingRoom size={24} />
                 </span>
                 <span className="link-text">Room Management</span>
               </Link>
             </li>
+
+            {/* Constraints: Tuning dials to represent parameter adjustments */}
             <li className="sidenav-item">
               <Link to="/constraints" className="sidenav-link">
                 <span className="link-icon">
-                  <MdDashboard size={20} />
+                  <MdTune size={24} />
                 </span>
                 <span className="link-text">Constraints</span>
               </Link>
             </li>
+
+            {/* Generate Timetable: Looping arrows to represent the algorithm iterating */}
             <li className="sidenav-item">
               <Link to="/generate-timetable" className="sidenav-link">
                 <span className="link-icon">
-                  <MdPerson size={22} />
+                  <MdAutorenew size={24} />
                 </span>
                 <span className="link-text">Generate Timetable</span>
               </Link>
             </li>
+
+            {/* Timetable View: A standard calendar */}
             <li className="sidenav-item">
               <Link to="/timetable-view" className="sidenav-link">
                 <span className="link-icon">
-                  <MdLock size={20} />
+                  <MdCalendarMonth size={24} />
                 </span>
                 <span className="link-text">Timetable View</span>
               </Link>
             </li>
+            
           </ul>
         </nav>
       </div>

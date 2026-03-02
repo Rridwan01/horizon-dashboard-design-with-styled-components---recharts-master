@@ -6,12 +6,24 @@ export const CustomCalendarWrap = styled.div`
   ${BlockWrapStyles}
   min-width: 100%;
 
+  .calendar-head {
+    margin-bottom: 20px;
+    
+    .head-ttl {
+      font-size: 20px;
+    }
+  }
+
+  .calendar-body {
+    display: flex;
+    justify-content: center;
+  }
+
   .react-calendar {
     background: transparent;
     border: none;
     font-family: ${theme.typography.fontFamily}!important;
-    margin-right: auto;
-    margin-left: auto;
+    width: 100%;
 
     .react-calendar__navigation {
       .react-calendar__navigation__arrow {
@@ -43,6 +55,7 @@ export const CustomCalendarWrap = styled.div`
       color: ${theme.colors.white};
       border-radius: 100vh;
       font-size: 12px;
+      padding: 10px 6.6667%;
 
       &:hover {
         background: ${theme.colors.majorelleBlue};
