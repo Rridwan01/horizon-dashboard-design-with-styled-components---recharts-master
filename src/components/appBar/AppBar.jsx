@@ -1,4 +1,5 @@
 import { useDispatch } from "react-redux";
+import { useLocation } from "react-router-dom";
 import { AppBarWrap } from "./AppBar.styles";
 import { setSidebarOpen } from "../../redux/slices/sidebarSlice";
 import { MdMenu, MdNotifications } from "react-icons/md";
@@ -8,6 +9,23 @@ import { Images } from "../../assets/images";
 
 const AppBar = () => {
   const dispatch = useDispatch();
+  const location = useLocation();
+
+  // Dynamically set the title based on the current URL path
+  const getPageTitle = () => {
+    switch (location.pathname) {
+      case "/": return "Main Dashboard";
+      case "/course-management": return "Course Management";
+      case "/room-management": return "Room Management";
+      case "/constraints": return "Constraints";
+      case "/generate-timetable": return "Generate Timetable";
+      case "/timetable-view": return "Timetable View";
+      default: return "Dashboard";
+    }
+  };
+
+  const pageTitle = getPageTitle();
+
   return (
     <AppBarWrap>
       <div className="appbar-content">
@@ -19,10 +37,12 @@ const AppBar = () => {
           >
             <MdMenu size={24} />
           </button>
-          <p className="appbar-head-breadcrumb">Pages / Dashboard</p>
+          <p className="appbar-head-breadcrumb">Pages / {pageTitle}</p>
         </div>
+        
         <div className="appbar-head-main">
-          <h3 className="appbar-head-ttl">Main Dashboard</h3>
+          <h3 className="appbar-head-ttl">{pageTitle}</h3>
+          
           <div className="appbar-head-rtl">
             <form className="appbar-head-search">
               <span className="appbar-search-icon">
@@ -44,7 +64,7 @@ const AppBar = () => {
             </div>
             <div className="appbar-head-profile">
               <div className="appbar-head-avatar">
-                <img src={Images.Avatar} alt="" />
+                <img src={Images.Avatar} alt="Profile" />
               </div>
             </div>
           </div>

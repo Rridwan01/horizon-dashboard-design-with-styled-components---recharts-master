@@ -8,7 +8,8 @@ export const BaseLayoutWrap = styled.div`
     color: ${theme.colors.white};
 
     .main-content-wrapper{
-        padding: 32px 20px;
+        /* Reduced the horizontal padding from 20px to 10px here */
+        padding: 32px 10px; 
         margin-left: 260px;
         flex: 1;
 

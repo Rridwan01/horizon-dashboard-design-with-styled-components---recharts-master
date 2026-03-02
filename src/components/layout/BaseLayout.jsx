@@ -8,6 +8,7 @@ const BaseLayout = () => {
     <BaseLayoutWrap>
       <Sidebar />
       <div className="main-content-wrapper">
+        {/* Render AppBar on ALL pages so the mobile menu works */}
         <AppBar />
         <Outlet />
       </div>
