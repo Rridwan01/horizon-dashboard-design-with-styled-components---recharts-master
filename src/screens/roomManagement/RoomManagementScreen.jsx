@@ -1,15 +1,18 @@
 import React from "react";
-import { RoomManagementWrap } from "./RoomManagementScreen.styles";
-import { PageWrapper } from "../../styles/shared/PageWrapper";
+import { RoomManagement } from "./RoomManagementScreen.styles";
+import RoomManagementTable from "../../components/pages/dashboard/RoomManagement/RoomManagementTable.jsx";
 
 const RoomManagementScreen = () => {
   return (
-    <RoomManagementWrap>
-      <PageWrapper>
-        <h1>Room Management</h1>
-        <p>Manage rooms here.</p>
-      </PageWrapper>
-    </RoomManagementWrap>
+    <RoomManagement>
+      <div className="screen-header">
+        <p>Manage examination halls, tracking their capacities and availability for scheduling.</p>
+      </div>
+
+      <div className="table-container">
+        <RoomManagementTable />
+      </div>
+    </RoomManagement>
   );
 };
 
